@@ -1,1 +1,187 @@
-Hello HouseLayout3D
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>HouseLayout3D Dataset</title>
+  <meta charset="utf-8">
+  <meta name="description" content="HouseLayout3D Dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="assets/images/chart-bubble.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://chen-geng.com/rose4d/static/css/index.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://chen-geng.com/rose4d/static/js/bulma-carousel.min.js"></script>
+  <script src="https://chen-geng.com/rose4d/static/js/bulma-slider.min.js"></script>
+  <script src="https://chen-geng.com/rose4d/static/js/index.js"></script>
+  <script src="https://chen-geng.com/rose4d/static/js/select.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  
+  <script type="module" src="https://cdn.jsdelivr.net/npm/fflate@0.8.1/esm/index.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+
+<body>
+  <div class="scroll-container">
+
+    <div class="section-nav">
+      <a href="#cover" class="dot active" title="Cover"></a>
+      <a href="#intro" class="dot" title="Introduction"></a>
+      <a href="#inter" class="dot" title="Interactive Results"></a>
+      <a href="#clay" class="dot" title="Clay-Monster"></a>
+      <a href="#approach" class="dot" title="Approach"></a>
+      <a href="#miscellaneous" class="dot" title="Miscellaneous"></a>
+    </div>
+
+    <!-- For PC and desktop devices -->
+    <div class="section hero is-link is-fullheight video" style="overflow: hidden; position:relative; background-color: black;" id="cover">
+
+      <div class="hero-video" style="
+       height: 100%;
+       width: 100%;
+       background-color: black;">
+        <video playsinline autoplay muted loop>
+          <source src="assets/videos/teaser_video_slide.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="overlay"></div>
+
+      <div id="top-bar" class="hero-head is-hidden-touch" style="position: fixed; top: 0; right: 0; z-index: 1000;">
+        <header class="navbar is-hidden-touch">
+          <div class="container is-size-5" style="margin-right:10px;">
+            <div class="navbar-menu">
+              <div class="navbar-end">
+
+                <a class="navbar-item pl-4 pr-4" href="assets/houselayout3d.pdf" style="font-size: 1.4vw;">
+                  <i class="ti ti-file" style="margin-right: 0.3vw;"></i>
+                  <span class="myfont">Paper</span>
+                </a>
+
+                <a class="navbar-item pl-4 pr-4" href="https://arxiv.org/abs/" style="font-size: 1.4vw;">
+                  <i class="ti ti-link" style="margin-right: 0.3vw;"></i>
+                  <span class="myfont">arXiv</span>
+                </a>
+
+                <a class="navbar-item pl-4 pr-4" href="#" style="font-size: 1.4vw;">
+                  <i class="ti ti-code" style="margin-right: 0.3vw;;"></i>
+                  <span class="myfont">Code</span>
+                </a>
+
+                <a class="navbar-item pl-4 pr-4" href="assets/videos/teaser_video_slide.mp4" style="font-size: 1.4vw;">
+                  <i class="ti ti-video" style="margin-right: 0.3vw;"></i>
+                  <span class="myfont">Video</span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="hero-body" style="max-width: 100%; width: 100%;">
+        <div class="container has-text-centered" style="max-width: 100%; width: 100%;">
+          <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 7vw; line-height: 1.1; text-align: center; width: 100%; max-width: 100%;">
+            <div style="display: inline-block;">
+              <i id="changing-icon" class="myfont"></i>
+              <span style="
+                background: linear-gradient(90deg, #ff6ec4, #7873f5);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                display: inline-block;
+                padding-bottom: 0.1em;">
+                HouseLayout3D
+              </span><br>
+              <span>Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild</span>
+            </div>
+          </h1>
+
+          <h1 class="subtitle is-1 is-size-4-mobile publication-title myfont" style="padding-top: 10vh; font-size: 2.5vw;">
+            NeurIPS 2025
+          </h1>
+          <h1 class="is-2 is-size-4-mobile" style="font-size: 2.5vw; opacity: 100%;">
+            <span class="myfont">
+              <a href="https://scholar.google.com/citations?user=Xel1HnoAAAAJ">Valentin Bieri<sup class="is-size-6-mobile">1</sup></a>, 
+            </span> 
+            <span class="myfont">
+              <a href="https://scholar.google.com/citations?user=eQ0om98AAAAJ">Marie-Julie Rakotosaona<sup class="is-size-6-mobile">2</sup></a>, 
+            </span> 
+            <span class="myfont">
+              <a href="https://scholar.google.com/citations?user=ml3laqEAAAAJ">Keisuke Tateno<sup class="is-size-6-mobile">2</sup></a>, 
+            </span><br />
+            <span class="myfont">
+              <a href="https://francisengelmann.github.io/">Francis Engelmann<sup class="is-size-6-mobile">3</sup></a>,
+            </span>
+            <span class="myfont">
+              <a href="https://profiles.stanford.edu/leonidas-guibas">Leonidas Guibas<sup class="is-size-6-mobile">3</sup></a>
+            </span>
+          </h1>
+          <br />
+          <h1 class="is-5 is-size-5-mobile myfont" style="font-size: 2vw; opacity: 100%;">
+            <sup class="is-size-6-mobile">1</sup>ETH Zurich,
+            <sup class="is-size-6-mobile">2</sup>Google,
+            <sup class="is-size-6-mobile">3</sup>Stanford University
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section is-medium myfont" id="intro">
+      <div
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
+        <div class="container">
+          <h1 class="title is-size-1-mobile text-white" style="font-size: 3vw;">
+            Introduction
+          </h1>
+        </div>
+      </div>
+
+      <br>
+
+  <div class="content" style="width: 80%; text-align: justify; margin: 0 auto;">
+        Current 3D layout estimation models are predominantly trained on synthetic datasets biased
+        toward simplistic, single-floor scenes. This prevents them from generalizing to complex,
+        multi-floor buildings, often forcing a per-floor processing approach that sacrifices global
+        context. Few works have attempted to holistically address multi-floor layouts.
+        To address this, we introduce HouseLayout3D, a real-world benchmark dataset, which highlights
+        the limitations of existing research when handling expansive, architecturally complex spaces.
+        Additionally, we propose MultiFloor3D, a baseline method leveraging recent advances in 3D
+        reconstruction and 2D segmentation. Our approach significantly outperforms state-of-the-art
+        methods on both our new and existing datasets. Remarkably, it does not require any
+        layout-specific training.
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <pre class="" style="
+              margin: 0;
+              background: transparent;
+            background-color: #1e1e1e;
+              border-radius: 12px;
+            "><code style="color: #e0e0e0; background: transparent;">@InProceedings{Bieri2025HouseLayout3D,
+  author    = {Bieri, Valentin; Rakotosaona, Marie-Julie; Tateno, Keisuke; Engelmann, Francis; Guibas, Leonidas},
+  title     = {HouseLayout3D: A Benchmark and Training-free Baseline for 3D Layout Estimation in the Wild},
+  booktitle = {Conference on Neural Information Processing Systems (NeurIPS)},
+  year      = {2025}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
