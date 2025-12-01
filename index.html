@@ -27,6 +27,19 @@
   
   <script type="module" src="https://cdn.jsdelivr.net/npm/fflate@0.8.1/esm/index.js"></script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  
+  <style>
+    /* Custom style for the checkmarks list */
+    .dataset-features li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem; /* Adjust size as needed */
+    }
+    .dataset-features .icon {
+        margin-right: 0.5rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,6 +47,8 @@
 
     <div class="section-nav">
       <a href="#cover" class="dot active" title="Cover"></a>
+      <a href="#dataset" class="dot" title="Dataset"></a>
+      <a href="#video" class="dot" title="Video"></a>
       <a href="#intro" class="dot" title="Introduction"></a>
       <a href="#inter" class="dot" title="Interactive Results"></a>
       <a href="#clay" class="dot" title="Clay-Monster"></a>
@@ -41,7 +56,6 @@
       <a href="#miscellaneous" class="dot" title="Miscellaneous"></a>
     </div>
 
-    <!-- For PC and desktop devices -->
     <div class="section hero is-link is-fullheight video" style="overflow: hidden; position:relative; background-color: black;" id="cover">
 
       <div class="hero-video" style="
@@ -128,11 +142,39 @@
         </div>
       </div>
     </div>
+    
+    <div class="section is-medium" id="dataset" style="background-color: white; color: black;">
+      <div class="container has-text-centered">
+            <figure class="image">
+              <img src="assets/teaser.png" alt="HouseLayout3D Teaser" style="width: 100%; object-fit: contain;">
+            </figure>
+          <div class="content">
+            <p class="is-size-5 myfont" style="margin-top: 20px;">
+              <b>HouseLayout3D</b>  is a benchmark dataset of architecturally complex real-world layouts. <br> With it, we introduce a training-free baseline method that outperforms state-of-the-art methods on both our new and existing datasets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
-    <!-- Intro -->
+    <div class="section is-medium" id="video" style="background-color: #f5f5f5;">
+      <div class="container has-text-centered">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="box" style="padding: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+              <video controls width="100%" style="display: block;">
+                <source src="assets/houselayout3d_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="section is-medium myfont" id="intro">
-      <div
-        style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 10vh;">
         <div class="container">
           <h1 class="title is-size-1-mobile text-white" style="font-size: 3vw;">
             Introduction
@@ -142,19 +184,121 @@
 
       <br>
 
-  <div class="content" style="width: 80%; text-align: justify; margin: 0 auto;">
-        Current 3D layout estimation models are predominantly trained on synthetic datasets biased
-        toward simplistic, single-floor scenes. This prevents them from generalizing to complex,
-        multi-floor buildings, often forcing a per-floor processing approach that sacrifices global
-        context. Few works have attempted to holistically address multi-floor layouts.
-        To address this, we introduce HouseLayout3D, a real-world benchmark dataset, which highlights
-        the limitations of existing research when handling expansive, architecturally complex spaces.
-        Additionally, we propose MultiFloor3D, a baseline method leveraging recent advances in 3D
-        reconstruction and 2D segmentation. Our approach significantly outperforms state-of-the-art
-        methods on both our new and existing datasets. Remarkably, it does not require any
-        layout-specific training.
+      <div class="content" style="width: 80%; text-align: justify; margin: 0 auto;">
+        <p>
+          <strong class="is-size-5" style="font-weight: 900; color: #ffffff;">TL;DR:</strong>
+          Current 3D layout estimation models are predominantly trained on synthetic datasets biased
+          toward simplistic, single-floor scenes. This prevents them from generalizing to complex,
+          multi-floor buildings, often forcing a per-floor processing approach that sacrifices global
+          context. Few works have attempted to holistically address multi-floor layouts.
+          To address this, we introduce HouseLayout3D, a real-world benchmark dataset, which highlights
+          the limitations of existing research when handling expansive, architecturally complex spaces.
+          Additionally, we propose MultiFloor3D, a baseline method leveraging recent advances in 3D
+          reconstruction and 2D segmentation. Our approach significantly outperforms state-of-the-art
+          methods on both our new and existing datasets. Remarkably, it does not require any
+          layout-specific training.
+        </p>
       </div>
     </div>
+    <div class="section is-medium" id="task" style="background-color: #f5f5f5;; color: #363636;">
+    <div class="container has-text-centered">
+      <figure class="image is-inline-block" style="max-width: 85%;">
+        <img src="assets/task.jpg" alt="Task Overview" style="width: auto; max-height: 60vh;">
+      </figure>
+      <div class="content">
+            <p class="is-size-5 myfont" style="margin-top: 20px;">
+          We start from a set of RGB images and recover the key structural elements of the space:<br> walls, floors, ceilings, doors, windows, and stairs.
+        </p>
+      </div>
+    </div>
+  </div>
+    <!-- <div class="section is-medium" id="dataset" style="background-color: white; color: black;">
+      <div class="container">
+        <div class="columns is-vcentered is-centered">
+          <div class="column is-7">
+            <figure class="image">
+              <img src="assets/pretty-house.jpg" alt="HouseLayout3D Teaser" style="width: 100%; object-fit: contain;">
+            </figure>
+          </div>
+          
+          <div class="column is-5">
+            <h2 class="title is-2 myfont" style="font-weight: 800; margin-bottom: 1.5rem;">
+              HouseLayout3D<br>
+              <span style="font-weight: 400;">Dataset</span>
+            </h2>
+            <ul class="dataset-features">
+              <li class="myfont">
+                <span class="icon has-text-success is-large">
+                  <i class="ti ti-check" style="font-size: 2rem; stroke-width: 3;"></i>
+                </span>
+                <span style="font-weight: 600;">Complex scenes</span>
+              </li>
+              <li class="myfont">
+                <span class="icon has-text-success is-large">
+                  <i class="ti ti-check" style="font-size: 2rem; stroke-width: 3;"></i>
+                </span>
+                <span style="font-weight: 600;">Multiple floors</span>
+              </li>
+              <li class="myfont">
+                <span class="icon has-text-success is-large">
+                  <i class="ti ti-check" style="font-size: 2rem; stroke-width: 3;"></i>
+                </span>
+                <span style="font-weight: 600;">Non-manhattan layouts</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>  -->
+
+<div class="section is-medium" id="pipeline" style="background-color: white; color: #363636;">
+    <div class="container has-text-centered">
+      <h2 class="title is-2 myfont" style="color: #363636; margin-bottom: 2.5rem;">Baseline Method Overview</h2>
+      <figure class="image is-inline-block" style="max-width: 95%;">
+        <img src="assets/pipeline.png" alt="Method Pipeline" style="width: auto;">
+      </figure>
+    </div>
+  </div>
+
+
+  <div class="section is-medium" id="results-hl3d" style="background-color: white; color: #363636;">
+    <div class="container has-text-centered">
+      <h2 class="title is-2 myfont" style="color: #363636; margin-bottom: 2.5rem;">HouseLayout3D Results</h2>
+      
+      <figure class="image is-inline-block" style="max-width: 90%; margin-bottom: 3rem;">
+        <img src="assets/result1.jpg" alt="HouseLayout3D Result 1">
+      </figure>
+
+      <figure class="image is-inline-block" style="max-width: 90%; margin-bottom: 3rem;">
+        <img src="assets/result2.jpg" alt="HouseLayout3D Result 2">
+      </figure>
+
+      <figure class="image is-inline-block" style="max-width: 90%;">
+        <img src="assets/result3.jpg" alt="HouseLayout3D Result 3">
+      </figure>
+
+    </div>
+  </div>
+
+<!-- 
+  <div class="section is-medium" id="stats" style="background-color: #f5f5f5; color: #363636;">
+    <div class="container has-text-centered">
+      <h2 class="title is-2 myfont" style="color: #363636;">Statistics</h2>
+      <div class="content">
+        <p class="is-size-5">Evaluation metrics and statistics will be presented here.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section is-medium" id="results-snpp" style="background-color: white; color: #363636;">
+    <div class="container has-text-centered">
+      <h2 class="title is-2 myfont" style="color: #363636; margin-bottom: 2.5rem;">ScanNet++ Results</h2>
+      <figure class="image is-inline-block" style="max-width: 90%;">
+        <img src="scannetpp.png" alt="ScanNet++ Results" style="width: auto;">
+      </figure>
+    </div>
+  </div> -->
 
     <footer class="footer">
       <div class="container">
@@ -176,7 +320,8 @@
       </div>
     </footer>
 
-    </div>
-    <script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
