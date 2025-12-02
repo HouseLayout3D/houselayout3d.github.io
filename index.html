@@ -146,7 +146,7 @@
     <div class="section is-medium" id="dataset" style="background-color: white; color: black;">
       <div class="container has-text-centered">
             <figure class="image">
-              <img src="assets/teaser.png" alt="HouseLayout3D Teaser" style="width: 100%; object-fit: contain;">
+              <img src="assets/teaser.jpg" alt="HouseLayout3D Teaser" style="width: 100%; object-fit: contain;">
             </figure>
           <div class="content">
             <p class="is-size-5 myfont" style="margin-top: 20px;">
@@ -186,17 +186,13 @@
 
       <div class="content" style="width: 80%; text-align: justify; margin: 0 auto;">
         <p>
-          <strong class="is-size-5" style="font-weight: 900; color: #ffffff;">TL;DR:</strong>
-          Current 3D layout estimation models are predominantly trained on synthetic datasets biased
-          toward simplistic, single-floor scenes. This prevents them from generalizing to complex,
-          multi-floor buildings, often forcing a per-floor processing approach that sacrifices global
-          context. Few works have attempted to holistically address multi-floor layouts.
-          To address this, we introduce HouseLayout3D, a real-world benchmark dataset, which highlights
-          the limitations of existing research when handling expansive, architecturally complex spaces.
-          Additionally, we propose MultiFloor3D, a baseline method leveraging recent advances in 3D
-          reconstruction and 2D segmentation. Our approach significantly outperforms state-of-the-art
-          methods on both our new and existing datasets. Remarkably, it does not require any
-          layout-specific training.
+Current 3D layout estimation models are primarily trained on synthetic datasets containing simple single room or single floor environments.
+As a consequence, they cannot natively handle large multi floor buildings and require scenes to be split into individual floors before processing,
+which removes global spatial context that is essential for reasoning about structures such as staircases that connect multiple levels.
+In this work, we introduce HouseLayout3D, a real world benchmark designed to support progress toward full building scale layout estimation,
+including multiple floors and architecturally intricate spaces. We also present MultiFloor3D, a simple training free baseline that leverages
+recent scene understanding methods and already outperforms existing 3D layout estimation models on both our benchmark and prior datasets,
+highlighting the need for further research in this direction.
         </p>
       </div>
     </div>
